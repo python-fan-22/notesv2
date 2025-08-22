@@ -18,16 +18,6 @@ struct Metronome {
     pause_start_button: PauseStart,
 }
 
-impl Metronome {
-    fn construct_column(&self) {
-        iced::widget::column![
-            iced::widget::text(self.note),
-            iced::widget::button(self.pause_start_button).on_press(Message::ButtonPressed),
-        ]
-    }
-}
-
-
 impl App {
     pub fn update(&mut self, message: Message) {
         match message {
